@@ -1,136 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Free Gift Card Generator</title>
+  <meta charset="UTF-8">
+  <title>🎁 Win a Free Gift Card – Limited Time!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
-      background: linear-gradient(to right, #ffdee9, #b5fffc);
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #fff6f6;
       margin: 0;
       padding: 0;
-      color: #333;
-    }
-
-    .container {
-      max-width: 400px;
-      margin: auto;
-      padding: 30px 20px;
       text-align: center;
     }
-
+    .container {
+      max-width: 600px;
+      margin: 80px auto;
+      background: #ffffff;
+      padding: 35px 25px;
+      border-radius: 16px;
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.2);
+    }
     h1 {
-      font-size: 24px;
+      color: #cc0000;
+      font-size: 26px;
+    }
+    p {
+      font-size: 18px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    .features {
+      text-align: left;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+    .features li {
       margin-bottom: 10px;
     }
-
-    p {
-      font-size: 14px;
-      color: #555;
-    }
-
-    .cards {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      margin: 20px 0;
-      flex-wrap: wrap;
-    }
-
-    .card {
-      background-color: #fff;
-      padding: 12px 16px;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-      cursor: pointer;
-      font-weight: bold;
-      width: 100px;
-    }
-
-    .generate-btn {
-      background-color: #e91e63;
+    .cta-button {
+      display: inline-block;
+      background: #ff0000;
       color: white;
-      padding: 15px;
-      border: none;
+      padding: 16px 28px;
       border-radius: 8px;
-      font-size: 16px;
-      cursor: pointer;
-      margin-top: 20px;
-    }
-
-    .generate-btn:hover {
-      background-color: #c2185b;
-    }
-
-    .code-box {
-      display: none;
-      font-family: monospace;
+      text-decoration: none;
       font-size: 20px;
-      margin-top: 20px;
-      color: green;
+      font-weight: bold;
+      animation: pulse 1.5s infinite;
     }
-
-    .footer {
-      margin-top: 40px;
-      font-size: 12px;
-      color: #999;
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(255,0,0, 0.4); }
+      70% { box-shadow: 0 0 0 20px rgba(255,0,0, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(255,0,0, 0); }
+    }
+    .note {
+      font-size: 14px;
+      color: #666;
+      margin-top: 25px;
+    }
+    .urgency {
+      background: #fff0f0;
+      padding: 10px;
+      color: #b30000;
+      border: 1px solid #ffcccc;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+    .count {
+      color: #d10000;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
-
   <div class="container">
-    <h1>🎁 Free Gift Card Generator</h1>
-    <p>Select your favorite gift card below and generate a free code:</p>
+    <h1>🎉 Last Chance to Win a $100 Gift Card!</h1>
+    
+    <div class="urgency">🔥 27 users have already claimed theirs today! Limited slots remaining.</div>
+    
+    <p>Want to win a Shein, Amazon, or PayPal gift card? You're just steps away:</p>
+    
+    <ul class="features">
+      <li>✅ 100% free entry – no credit card needed</li>
+      <li>✅ Takes less than 2 minutes</li>
+      <li>✅ Real U.S.-exclusive rewards</li>
+    </ul>
 
-    <div class="cards">
-      <div class="card">SheIn</div>
-      <div class="card">Amazon</div>
-      <div class="card">Roblox</div>
-    </div>
+    <a class="cta-button" href="https://verifysuper.com/sl/0pm9y" target="_blank">👉 Claim Your Chance Now</a>
 
-    <button class="generate-btn" onclick="startGeneration()">Generate Code</button>
-
-    <div class="code-box" id="codeBox">
-      Generating code: <span id="fakeCode">XXXX-XXXX-XXXX</span>
+    <div class="note">
+      *You may qualify for a real giveaway depending on your location and device. No guaranteed prize. U.S. only.*
     </div>
   </div>
-
-  <div class="footer">
-    © 2025 | For Educational Use Only. Not affiliated with SheIn, Amazon, or Roblox.
-  </div>
-
-  <script>
-    function generateFakeCode() {
-      const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-      let code = '';
-      for (let i = 0; i < 16; i++) {
-        if (i === 4 || i === 9 || i === 14) {
-          code += '-';
-        } else {
-          code += chars.charAt(Math.floor(Math.random() * chars.length));
-        }
-      }
-      return code;
-    }
-
-    function startGeneration() {
-      document.querySelector(".generate-btn").style.display = "none";
-      document.getElementById("codeBox").style.display = "block";
-
-      let counter = 0;
-      const interval = setInterval(() => {
-        document.getElementById("fakeCode").innerText = generateFakeCode();
-        counter++;
-        if (counter > 5) {
-          clearInterval(interval);
-          // Redirect to smart link
-          window.location.href = "https://locked4.com/sl/0pm9y";
-        }
-      }, 600);
-    }
-  </script>
-
 </body>
 </html>
+
